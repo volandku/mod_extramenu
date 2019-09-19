@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6" client="administrator" method="upgrade">
+	<name>mod_extramenu</name>
+	<author>Sergey Bolotov</author>
+	<creationDate>September 2019</creationDate>
+	<copyright>Copyright (C) 2005 - 2019 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>sales@webstudio.pro</authorEmail>
+	<authorUrl>http://webstudio.pro</authorUrl>
+	<version>1.0.0</version>
+	<description>Дополнительная строчка меню</description>
+	<files>
+		<filename module="mod_extramenu">mod_extramenu.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<filename>tmpl/default.php</filename>
+		<filename>helper.php</filename>
+		<filename>mod_extramenu.xml</filename>
+		<filename>menuitem.xml</filename>
+
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+				<field name="menuitem" type="subform"
+    formsource="/administrator/modules/mod_extramenu/menuitem.xml"
+    label="Пункт меню" multiple="true" description="Выберите пункт меню" />
+
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

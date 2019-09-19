@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="section1" label="Section1">
+        <field
+        name="menuitem"
+        type="sql"
+        default="1"
+        label="Выберите пункт меню"
+        query="SELECT id, title, path, CONCAT(title,' ( ',path,' )') AS result  FROM #__menu WHERE client_id=1"
+        key_field="id"
+        value_field="result" />
+        <field name="CTitle" type="text" label="Своё название" />
+        <field name="component_only" type="list" default="1" class="advancedSelect" label="Показывать только внутри компонента">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="dont_show_on_edit" type="list" default="1" class="advancedSelect" label="Не показывать при редактировании элементов">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+
+    </fieldset>
+
+</form>
